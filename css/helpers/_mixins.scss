@@ -1,0 +1,19 @@
+@mixin title-text {
+    font: {
+        family: 'Open Sans', serif;
+        size: 15px;
+        weight: 500;
+    }
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@mixin parallelogram( $background-color, $scale: 1) {
+    position: relative;
+    z-index: 2;
+    width: 250px;
+    height: 45px;
+    margin: auto;
+    transform: skew(20deg) scale($scale);
+    background-color: $background-color;
+}

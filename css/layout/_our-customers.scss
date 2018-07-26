@@ -1,0 +1,63 @@
+@import "../helpers/variables";
+@import "../helpers/mixins";
+.customers {
+    display: flex;
+    width: 80%;
+    height: 500px;
+    overflow: hidden;
+    @media screen and (max-width: $break-medium) {
+        flex-direction: column;
+        .customer {
+            position: relative;
+            top: -400px;
+        }
+    }
+}
+
+.customer.small {
+    transform: scale(0.8);
+    @media screen and (max-width: $break-large) {
+        transform: scale(0.55);
+    }
+}
+
+.customer {
+    flex: 1 0 33.3%;
+    @media screen and (max-width: $break-large) {
+        transform: scale(0.7);
+    }
+    .name {
+        @include parallelogram($purple);
+        top: 380px;
+        p {
+            @include title-text();
+            color: white;
+            transform: skew(-20deg);
+            line-height: 45px;
+        }
+    }
+    .country {
+        @include parallelogram($title-font-color, 0.8);
+        top: 360px;
+        p {
+            @include title-text();
+            color: white;
+            transform: skew(-20deg);
+            line-height: 40px;
+        }
+    }
+}
+
+.frame {
+    @extend %photo;
+    transform: rotate(-45deg);
+    .photo {
+        @extend %photo;
+        transform: scale(0.9);
+        overflow: hidden;
+        img {
+            transform: rotate(45deg) translate(-24%, 17%);
+            width: 217%;
+        }
+    }
+}
