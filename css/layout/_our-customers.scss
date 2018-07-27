@@ -18,7 +18,7 @@
         flex-direction: column;
         .customer {
             position: relative;
-            top: -470px;
+            top: -410px;
         }
     }
 }
@@ -102,7 +102,7 @@
         @media screen and (max-width: $break-medium) {
             transform: translateX(0%);
             left: 0;
-            top: -470px;
+            top: -410px;
         }
     }
     .small {
@@ -110,6 +110,10 @@
         transform: translateX(-100%) scale(0.8);
         @media screen and (max-width: $break-large) {
             transform: translateX(-100%) scale(0.55);
+        }
+        @media screen and (max-width: $break-medium) {
+            transform: translateX(0%) scale(0.7);
+            left: 0;
         }
     }
 }

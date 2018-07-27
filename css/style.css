@@ -107,7 +107,7 @@
   }
   .customers .customer {
     position: relative;
-    top: -470px;
+    top: -410px;
   }
 }
 
@@ -272,7 +272,7 @@
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
     left: 0;
-    top: -470px;
+    top: -410px;
   }
 }
 
@@ -293,6 +293,14 @@
   .animate.is-reversing .small {
     -webkit-transform: translateX(-100%) scale(0.55);
             transform: translateX(-100%) scale(0.55);
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .animate.is-reversing .small {
+    -webkit-transform: translateX(0%) scale(0.7);
+            transform: translateX(0%) scale(0.7);
+    left: 0;
   }
 }
 
