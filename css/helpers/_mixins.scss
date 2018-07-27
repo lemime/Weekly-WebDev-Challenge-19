@@ -17,3 +17,9 @@
     transform: skew(20deg) scale($scale);
     background-color: $background-color;
 }
+
+@mixin transformation($direction, $scale: 1) {
+    transform: none;
+    transform: translateX($direction) scale($scale);
+    transition: transform 0.5s ease-in-out;
+}

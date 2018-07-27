@@ -1,0 +1,34 @@
+.next {
+    visibility: hidden;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+}
+
+.prev {
+    visibility: hidden;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: rotate(180deg);
+}
+
+%bar {
+    visibility: visible;
+    opacity: 0.6;
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-left: 35px solid black;
+    border-bottom: 30px solid transparent;
+    transition: opacity 0.3s;
+}
+
+%bar:hover {
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.arrow {
+    @extend %bar;
+}

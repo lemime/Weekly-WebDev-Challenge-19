@@ -1,28 +1,32 @@
 @import "../helpers/variables";
 @import "../helpers/mixins";
+.carousel {
+    position: relative;
+    @media screen and (max-width: $break-large) {
+        width: 90%;
+    }
+}
+
 .customers {
+    position: relative;
     display: flex;
     width: 80%;
     height: 500px;
     overflow: hidden;
+    margin: auto;
     @media screen and (max-width: $break-medium) {
         flex-direction: column;
         .customer {
             position: relative;
-            top: -400px;
+            top: -470px;
         }
     }
 }
 
-.customer.small {
-    transform: scale(0.8);
-    @media screen and (max-width: $break-large) {
-        transform: scale(0.55);
-    }
-}
-
 .customer {
+    position: relative;
     flex: 1 0 33.3%;
+    left: -33.3%;
     @media screen and (max-width: $break-large) {
         transform: scale(0.7);
     }
@@ -48,6 +52,13 @@
     }
 }
 
+.customer.small {
+    transform: scale(0.8);
+    @media screen and (max-width: $break-large) {
+        transform: scale(0.55);
+    }
+}
+
 .frame {
     @extend %photo;
     transform: rotate(-45deg);
@@ -58,6 +69,47 @@
         img {
             transform: rotate(45deg) translate(-24%, 17%);
             width: 217%;
+        }
+    }
+}
+
+.animate {
+    .primary {
+        @include transformation(100%);
+        @media screen and (max-width: $break-large) {
+            transform: translateX(100%) scale(0.7);
+        }
+        @media screen and (max-width: $break-medium) {
+            transform: translateX(0%) scale(0.7);
+            left: 0;
+        }
+    }
+    .small {
+        @include transformation(100%);
+        transform: translateX(100%) scale(0.8);
+        @media screen and (max-width: $break-large) {
+            transform: translateX(100%) scale(0.55);
+        }
+    }
+}
+
+.animate.is-reversing {
+    .primary {
+        @include transformation(-100%);
+        @media screen and (max-width: $break-large) {
+            transform: translateX(-100%) scale(0.7);
+        }
+        @media screen and (max-width: $break-medium) {
+            transform: translateX(0%);
+            left: 0;
+            top: -470px;
+        }
+    }
+    .small {
+        @include transformation(100%);
+        transform: translateX(-100%) scale(0.8);
+        @media screen and (max-width: $break-large) {
+            transform: translateX(-100%) scale(0.55);
         }
     }
 }
