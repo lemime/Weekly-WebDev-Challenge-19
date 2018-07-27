@@ -8,17 +8,21 @@ class Carousel {
             element.style.order = index;
         }
         this.elements[0].parentElement.classList.add('animate');
+        this.quote = this.elements[1].firstElementChild.cloneNode(true);
+        document.querySelector('.quote-block').appendChild(this.quote);
     }
     previous() {
-        this.currentElement = document.querySelector('.primary');
-        this.currentElement.classList.remove('primary');
-        this.currentElement.classList.add('small');
+
         if (this.currentElement.nextElementSibling) {
             this.currentElement.nextElementSibling.classList.add('primary');
             this.currentElement.nextElementSibling.classList.remove('small');
+            this.quote = this.currentElement.nextElementSibling.firstElementChild.cloneNode(true);
+            document.querySelector('.quote-block').replaceChild(this.quote, document.querySelector('.quote-block').firstChild);
         } else {
             this.elements[0].classList.add('primary');
             this.elements[0].classList.remove('small');
+            this.quote = this.elements[0].firstElementChild.cloneNode(true);
+            document.querySelector('.quote-block').replaceChild(this.quote, document.querySelector('.quote-block').firstChild);
         }
         let index = 2;
         for (let element of this.elements) {
@@ -32,15 +36,19 @@ class Carousel {
         }
     }
     next() {
-        this.currentElement = document.querySelector('.primary');
-        this.currentElement.classList.remove('primary');
-        this.currentElement.classList.add('small');
+
+
+
         if (this.currentElement.previousElementSibling) {
             this.currentElement.previousElementSibling.classList.add('primary');
             this.currentElement.previousElementSibling.classList.remove('small');
+            this.quote = this.currentElement.previousElementSibling.firstElementChild.cloneNode(true);
+            document.querySelector('.quote-block').replaceChild(this.quote, document.querySelector('.quote-block').firstChild);
         } else {
             this.elements[this.elementNumber - 1].classList.add('primary');
             this.elements[this.elementNumber - 1].classList.remove('small');
+            this.quote = this.elements[this.elementNumber - 1].firstElementChild.cloneNode(true);
+            document.querySelector('.quote-block').replaceChild(this.quote, document.querySelector('.quote-block').firstChild);
         }
         let index = 2;
         for (let element of this.elements) {
@@ -56,6 +64,9 @@ class Carousel {
         this.customers.offsetWidth;
         this.customers.classList.add('animate');
 
+        this.currentElement = document.querySelector('.primary');
+        this.currentElement.classList.remove('primary');
+        this.currentElement.classList.add('small');
 
     }
 }

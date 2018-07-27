@@ -16,9 +16,10 @@
     margin: auto;
     @media screen and (max-width: $break-medium) {
         flex-direction: column;
+        height: 400px;
         .customer {
             position: relative;
-            top: -410px;
+            top: -460px;
         }
     }
 }
@@ -49,6 +50,9 @@
             transform: skew(-20deg);
             line-height: 40px;
         }
+    }
+    .quote {
+        display: none;
     }
 }
 
@@ -102,7 +106,7 @@
         @media screen and (max-width: $break-medium) {
             transform: translateX(0%);
             left: 0;
-            top: -410px;
+            top: -460px;
         }
     }
     .small {
@@ -116,4 +120,42 @@
             left: 0;
         }
     }
+}
+
+.quote-block {
+    max-width: $break-medium;
+    padding: 50px 30px 0 30px;
+    min-height: 180px;
+}
+
+.quote {
+    font: {
+        family: 'Playfair Display', serif;
+        weight: 300;
+        size: 27px;
+    }
+    text-align: center;
+}
+
+%quote-mark {
+    display: inline;
+    color: $purple;
+    font: {
+        family: 'Passion One', serif;
+        weight: 300;
+        size: 50px;
+    }
+    position: relative;
+}
+
+.quote::after {
+    @extend %quote-mark;
+    content: "\0022";
+}
+
+.quote::before {
+    @extend %quote-mark;
+    content: "“";
+    top: 30px;
+    right: 5px;
 }

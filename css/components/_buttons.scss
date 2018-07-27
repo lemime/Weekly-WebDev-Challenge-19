@@ -1,3 +1,27 @@
+.primary-button {
+    width: 150px;
+    height: 40px;
+    border: solid 1px $purple;
+    color: $purple;
+    background-color: transparent;
+    margin-top: 40px;
+    font: {
+        family: 'Open Sans', serif;
+        weight: 700;
+        size: 12px;
+    }
+    text-transform: uppercase;
+}
+
+.primary-button:hover {
+    border: solid 2px $purple;
+    box-shadow: 0px 0px 10px 0px rgba(41.18, 8.24, 47.84, 0.2);
+}
+
+button:focus {
+    outline: 0;
+}
+
 .next {
     visibility: hidden;
     position: absolute;
