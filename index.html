@@ -11,27 +11,56 @@
 </head>
 
 <body>
-  <nav></nav>
+  <input class="nav-input" id="more" type="checkbox">
+  <nav>
+
+    <ul>
+      <div class="logo-container">
+        <img src="img/logo.png">
+      </div>
+      <li>Flights</li>
+      <li>Hotels</li>
+      <li>Guides</li>
+      <li>Popular</li>
+    </ul>
+    <label for="more">
+      <div class="hamburger">
+        <div class="hamburger-bar"></div>
+        <div class="hamburger-bar"></div>
+        <div class="hamburger-bar"></div>
+      </div>
+    </label>
+  </nav>
   <header>
-    <div class="search-panel"></div>
+    <div class="container">
+      <h1>Fly with us</h1>
+    </div>
+    <div class="search-panel">
+      <input class="city" placeholder="Current City">
+      <input class="destination" placeholder="Destination">
+      <input type="date">
+      <input type="date">
+      <input type="number">
+    </div>
   </header>
   <section id="about-us">
-    <h2>Find the cheapest flights</h2>
+    <h3>Find the cheapest flights</h3>
     <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exv ea commodo consequat. Duis aute
       irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
     <div class="icons">
       <div class="icon">
         <img src="img/umbrella.svg"> </div>
-      <div class="icon">
-        <img src="img/ticket.svg"> </div>
+      <svg class="icon" viewBox="0 0 180 180">
+        <use xlink:href="img/ticket-icon.svg#ticket"></use>
+      </svg>
       <div class="icon">
         <img src="img/money.svg"> </div>
     </div>
   </section>
   <div class="bar"></div>
   <section id="popular-destinations">
-    <h2>Popular Destinations</h2>
+    <h3>Popular Destinations</h3>
     <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exv ea commodo consequat. Duis aute
       irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -43,7 +72,11 @@
         <div class="back-photo">
         </div>
         <div class="back-photo"></div>
-        <p>New York</p>
+        <div class="name">
+          <p>New York
+          </p>
+          <div class="underline"></div>
+        </div>
       </div>
       <div class="place">
         <div class="back-photo">
@@ -51,7 +84,10 @@
         </div>
         <div class="back-photo"></div>
         <div class="back-photo"></div>
-        <p>Dubai</p>
+        <div class="name">
+          <p>Dubai</p>
+          <div class="underline"></div>
+        </div>
       </div>
       <div class="place">
         <div class="back-photo">
@@ -59,7 +95,10 @@
         </div>
         <div class="back-photo"></div>
         <div class="back-photo"></div>
-        <p>Paris</p>
+        <div class="name">
+          <p>Paris</p>
+          <div class="underline"></div>
+        </div>
       </div>
       <div class="place">
         <div class="back-photo">
@@ -67,7 +106,10 @@
         </div>
         <div class="back-photo"></div>
         <div class="back-photo"></div>
-        <p>London</p>
+        <div class="name">
+          <p>London</p>
+          <div class="underline"></div>
+        </div>
       </div>
       <div class="place">
         <div class="back-photo">
@@ -75,7 +117,10 @@
         </div>
         <div class="back-photo"></div>
         <div class="back-photo"></div>
-        <p>Amsterdam</p>
+        <div class="name">
+          <p>Amsterdam</p>
+          <div class="underline"></div>
+        </div>
       </div>
       <div class="place">
         <div class="back-photo">
@@ -83,15 +128,18 @@
         </div>
         <div class="back-photo"></div>
         <div class="back-photo"></div>
-        <p>rio de janeiro</p>
+        <div class="name">
+          <p>rio de janeiro</p>
+          <div class="underline"></div>
+        </div>
       </div>
     </div>
     <button class="primary-button">View more</button>
   </section>
   <div class="bar"></div>
   <section id="customers">
-    <h2>Hear our
-      <br>customers’ thoughts </h2>
+    <h3>Hear our
+      <br>customers’ thoughts </h3>
     <div class="break">
       <span class="line"></span>
       <span class="heart">
@@ -213,7 +261,7 @@
   </section>
   <div class="bar"></div>
   <section id="get-started">
-    <h1>We had the experience of our life.</h1>
+    <h2>We had the experience of our life.</h2>
     <button class="primary-button">Get started</button>
   </section>
   <div class="bar">

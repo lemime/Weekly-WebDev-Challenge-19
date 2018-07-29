@@ -1,6 +1,6 @@
+@import "../helpers/variables";
 $destination-photo-size: 300px;
-$text-gray: #585858;
-$photo-color: #ebebeb;
+$destination-photo-minimum-size: 200px;
 .places {
     display: flex;
     flex-direction: row;
@@ -16,17 +16,37 @@ $photo-color: #ebebeb;
     width: $destination-photo-size;
     justify-content: center;
     margin: 40px 60px 140px 60px;
-    p {
+    cursor: pointer;
+    .name {
+        display: inline-block;
         position: relative;
+        left: 50%;
+        transform: translateX(-50%);
         top: -2*$destination-photo-size + 30px;
+        @media screen and (max-width: $break-extra-small) {
+            top: -2*$destination-photo-minimum-size + 30px;
+        }
+    }
+    p {
+        display: inline-block;
         text-align: center;
         color: $text-gray;
         text-transform: uppercase;
+        margin-bottom: 0;
         font: {
             family: 'Open Sans', serif;
             weight: 800;
             size: 19px;
         }
+    }
+    .underline {
+        height: 4px;
+        width: 0;
+        background-color: $purple;
+        transition: all 0.3s;
+    }
+    @media screen and (max-width: $break-extra-small) {
+        margin: 20px 0 40px 0;
     }
 }
 
@@ -37,6 +57,11 @@ $photo-color: #ebebeb;
     position: relative;
     margin: auto;
     box-shadow: 9px 9px 10px -6px rgba(0, 0, 0, 0.26);
+    transition: all 0.3s;
+    @media screen and (max-width: $break-extra-small) {
+        width: $destination-photo-minimum-size;
+        height: $destination-photo-minimum-size;
+    }
 }
 
 .back-photo:first-child {
@@ -51,6 +76,10 @@ $photo-color: #ebebeb;
         height: 100%;
         width: auto;
     }
+    @media screen and (max-width: $break-extra-small) {
+        width: $destination-photo-minimum-size - 40px;
+        height: $destination-photo-minimum-size - 40px;
+    }
 }
 
 .back-photo:nth-child(2) {
@@ -59,6 +88,9 @@ $photo-color: #ebebeb;
     transform: rotate(-5deg);
     background-color: #e1e1e1;
     top: -$destination-photo-size;
+    @media screen and (max-width: $break-extra-small) {
+        top: -$destination-photo-minimum-size;
+    }
 }
 
 .back-photo:nth-child(3) {
@@ -66,4 +98,19 @@ $photo-color: #ebebeb;
     z-index: 0;
     transform: rotate(-10deg);
     top: -2*$destination-photo-size;
+    @media screen and (max-width: $break-extra-small) {
+        top: -2*$destination-photo-minimum-size;
+    }
+}
+
+.place:hover>.back-photo:first-child {
+    transform: rotate(5deg);
+}
+
+.place:hover>.back-photo:nth-child(3) {
+    transform: rotate(-15deg);
+}
+
+.place:hover>.name .underline {
+    width: 100%;
 }

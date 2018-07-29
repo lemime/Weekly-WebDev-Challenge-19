@@ -6,6 +6,9 @@
     }
     text-transform: uppercase;
     text-align: center;
+    @media screen and (max-width: $break-extra-small) {
+        size: 13px;
+    }
 }
 
 @mixin parallelogram( $background-color, $scale: 1) {
@@ -16,6 +19,10 @@
     margin: auto;
     transform: skew(20deg) scale($scale);
     background-color: $background-color;
+    @media screen and (max-width: $break-extra-small) {
+        width: 200px;
+        height: 40px;
+    }
 }
 
 @mixin transformation($direction, $scale: 1) {

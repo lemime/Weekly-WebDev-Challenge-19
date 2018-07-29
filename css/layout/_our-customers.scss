@@ -22,6 +22,9 @@
             top: -460px;
         }
     }
+    @media screen and (max-width: $break-extra-small) {
+        height: 230px;
+    }
 }
 
 .customer {
@@ -74,6 +77,9 @@
             transform: rotate(45deg) translate(-24%, 17%);
             width: 217%;
         }
+    }
+    @media screen and (max-width: $break-extra-small) {
+        top: 110px;
     }
 }
 

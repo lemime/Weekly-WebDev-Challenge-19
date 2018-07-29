@@ -18,6 +18,10 @@
     box-shadow: 0px 0px 10px 0px rgba(41.18, 8.24, 47.84, 0.2);
 }
 
+button {
+    cursor: pointer;
+}
+
 button:focus {
     outline: 0;
 }
@@ -46,6 +50,7 @@ button:focus {
     border-left: 35px solid black;
     border-bottom: 30px solid transparent;
     transition: opacity 0.3s;
+    cursor: pointer;
 }
 
 %bar:hover {
