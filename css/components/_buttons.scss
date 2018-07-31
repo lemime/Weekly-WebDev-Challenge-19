@@ -13,6 +13,18 @@
     text-transform: uppercase;
 }
 
+.search {
+    border: none;
+    color: white;
+    background-color: $purple;
+    font: {
+        family: 'Playfair Display', serif;
+        weight: 900;
+        size: 38px;
+    }
+    box-shadow: 0px 0px 60px 5px rgba($color: #000000, $alpha: 0.1);
+}
+
 .primary-button:hover {
     border: solid 2px $purple;
     box-shadow: 0px 0px 10px 0px rgba(41.18, 8.24, 47.84, 0.2);
@@ -60,4 +72,9 @@ button:focus {
 
 .arrow {
     @extend %bar;
+}
+
+.people-button {
+    cursor: pointer;
+    user-select: none;
 }

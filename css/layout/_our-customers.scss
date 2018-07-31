@@ -2,7 +2,7 @@
 @import "../helpers/mixins";
 .carousel {
     position: relative;
-    @media screen and (max-width: $break-large) {
+    @media screen and (max-width: $break-extra-large) {
         width: 90%;
     }
 }
@@ -31,7 +31,7 @@
     position: relative;
     flex: 1 0 33.3%;
     left: -33.3%;
-    @media screen and (max-width: $break-large) {
+    @media screen and (max-width: $break-extra-large) {
         transform: scale(0.7);
     }
     .name {
@@ -61,7 +61,7 @@
 
 .customer.small {
     transform: scale(0.8);
-    @media screen and (max-width: $break-large) {
+    @media screen and (max-width: $break-extra-large) {
         transform: scale(0.55);
     }
 }
@@ -86,7 +86,7 @@
 .animate {
     .primary {
         @include transformation(100%);
-        @media screen and (max-width: $break-large) {
+        @media screen and (max-width: $break-extra-large) {
             transform: translateX(100%) scale(0.7);
         }
         @media screen and (max-width: $break-medium) {
@@ -97,7 +97,7 @@
     .small {
         @include transformation(100%);
         transform: translateX(100%) scale(0.8);
-        @media screen and (max-width: $break-large) {
+        @media screen and (max-width: $break-extra-large) {
             transform: translateX(100%) scale(0.55);
         }
     }
@@ -106,7 +106,7 @@
 .animate.is-reversing {
     .primary {
         @include transformation(-100%);
-        @media screen and (max-width: $break-large) {
+        @media screen and (max-width: $break-extra-large) {
             transform: translateX(-100%) scale(0.7);
         }
         @media screen and (max-width: $break-medium) {
@@ -118,7 +118,7 @@
     .small {
         @include transformation(100%);
         transform: translateX(-100%) scale(0.8);
-        @media screen and (max-width: $break-large) {
+        @media screen and (max-width: $break-extra-large) {
             transform: translateX(-100%) scale(0.55);
         }
         @media screen and (max-width: $break-medium) {

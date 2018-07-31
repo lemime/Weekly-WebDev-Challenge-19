@@ -4,7 +4,7 @@
     width: 70%;
     min-height: 180px;
     display: grid;
-    grid-template-columns: 1fr 30px;
+    grid-template-columns: 1fr 100px;
     grid-column-gap: 10px;
     box-sizing: border-box;
     background-color: $dark-purple;
@@ -19,11 +19,6 @@
         font-size: 16px;
         font-weight: 300;
     }
-    @media screen and (max-width: $break-small) {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, 30px);
-        height: auto;
-    }
     .icon {
         width: 22px;
         height: 22px;
@@ -34,22 +29,61 @@
 }
 
 .inputs {
-    box-sizing: border-box;
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
+    box-sizing: border-box;
     padding: 30px 20px 20px 20px;
+}
+
+@media screen and (max-width: $break-large) {
+    .inputs {
+        display: grid;
+        grid-template: 1fr 1fr/ 250px 250px 100px;
+        justify-content: center;
+    }
+    .input-box:last-child {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+    }
+}
+
+@media screen and (max-width: $break-medium - 200px) {
+    .search-panel {
+        bottom: -300px;
+        height: 400px;
+        grid-template: 1fr 50px / 1fr;
+    }
+    .inputs {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .search-panel input {
+        max-width: 90%;
+        width: 90%;
+    }
+    .date {
+        input {
+            max-width: 150px;
+        }
+    }
+    #about-us {
+        padding-top: 300px;
+    }
+}
+
+@media screen and (max-width: $break-extra-small) {
+    .search-panel {
+        width: 100%;
+    }
 }
 
 .inputs>* {
     margin: 0 20px;
-}
-
-.date.calendar-visible .mini-clndr {
-    display: block;
 }
 
 input:focus {
@@ -58,6 +92,7 @@ input:focus {
 
 input::placeholder {
     color: white;
+    opacity: 0.4;
     margin-bottom: 10px;
 }
 
@@ -73,8 +108,23 @@ input::placeholder {
     }
 }
 
+.people-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
 .people-input input {
     width: 40px;
+}
+
+.date input {
+    max-width: 120px;
+}
+
+.date.calendar-visible .mini-clndr {
+    display: block;
 }
 
 .mini-clndr {

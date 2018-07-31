@@ -100,6 +100,22 @@ class Calendar {
     }
 }
 
+function setDate(date, selector) {
+    var dd = date.getDate();
+    if (dd.toString().length == 1) {
+        dd = "0" + dd;
+    }
+    var mm = date.getMonth() + 1;
+    if (mm.toString().length == 1) {
+        mm = "0" + mm;
+    }
+    var yyyy = date.getFullYear();
+
+    date = yyyy + "-" + mm + "-" + dd;
+    document.querySelector(selector).firstElementChild.lastElementChild.value = date;
+
+}
+
 document.addEventListener("DOMContentLoaded", function () {
 
     let carousel = new Carousel();
@@ -116,4 +132,17 @@ document.addEventListener("DOMContentLoaded", function () {
     calendar = new Calendar('.from');
     calendar = new Calendar('.to');
 
+    let peopleInput = document.querySelector('.people-number');
+    document.querySelector('.number-up').addEventListener('click', () => {
+        peopleInput.value++;
+    });
+    document.querySelector('.number-down').addEventListener('click', () => {
+        if (peopleInput.value > 1) {
+            peopleInput.value--;
+        }
+    });
+
+    let today = new Date();
+    setDate(today, '.from');
+    setDate(new Date(today.getFullYear(), today.getMonth(), today.getDate() + 7), '.to');
 });

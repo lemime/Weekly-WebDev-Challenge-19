@@ -465,6 +465,17 @@
   text-transform: uppercase;
 }
 
+.search {
+  border: none;
+  color: white;
+  background-color: #69157a;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 38px;
+  -webkit-box-shadow: 0px 0px 60px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 60px 5px rgba(0, 0, 0, 0.1);
+}
+
 .primary-button:hover {
   border: solid 2px #69157a;
   -webkit-box-shadow: 0px 0px 10px 0px rgba(41, 8, 48, 0.2);
@@ -512,6 +523,14 @@ button:focus {
   opacity: 1;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
+}
+
+.people-button {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 nav {
@@ -637,8 +656,8 @@ nav li:hover {
   min-height: 180px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 30px;
-      grid-template-columns: 1fr 30px;
+  -ms-grid-columns: 1fr 100px;
+      grid-template-columns: 1fr 100px;
   grid-column-gap: 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -657,16 +676,6 @@ nav li:hover {
   font-weight: 300;
 }
 
-@media screen and (max-width: 700px) {
-  .search-panel {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    -ms-grid-rows: (30px)[5];
-        grid-template-rows: repeat(5, 30px);
-    height: auto;
-  }
-}
-
 .search-panel .icon {
   width: 22px;
   height: 22px;
@@ -677,8 +686,6 @@ nav li:hover {
 }
 
 .inputs {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -694,15 +701,70 @@ nav li:hover {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 30px 20px 20px 20px;
+}
+
+@media screen and (max-width: 1400px) {
+  .inputs {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1fr 1fr;
+    -ms-grid-columns: 250px 250px 100px;
+        grid-template: 1fr 1fr/ 250px 250px 100px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .input-box:last-child {
+    -ms-grid-column: 3;
+    grid-column: 3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1 / span 2;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .search-panel {
+    bottom: -300px;
+    height: 400px;
+    -ms-grid-rows: 1fr 50px;
+    -ms-grid-columns: 1fr;
+        grid-template: 1fr 50px / 1fr;
+  }
+  .inputs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .search-panel input {
+    max-width: 90%;
+    width: 90%;
+  }
+  .date input {
+    max-width: 150px;
+  }
+  #about-us {
+    padding-top: 300px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .search-panel {
+    width: 100%;
+  }
 }
 
 .inputs > * {
   margin: 0 20px;
-}
-
-.date.calendar-visible .mini-clndr {
-  display: block;
 }
 
 input:focus {
@@ -711,21 +773,25 @@ input:focus {
 
 input::-webkit-input-placeholder {
   color: white;
+  opacity: 0.4;
   margin-bottom: 10px;
 }
 
 input:-ms-input-placeholder {
   color: white;
+  opacity: 0.4;
   margin-bottom: 10px;
 }
 
 input::-ms-input-placeholder {
   color: white;
+  opacity: 0.4;
   margin-bottom: 10px;
 }
 
 input::placeholder {
   color: white;
+  opacity: 0.4;
   margin-bottom: 10px;
 }
 
@@ -743,8 +809,30 @@ input::placeholder {
   text-align: center;
 }
 
+.people-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
 .people-input input {
   width: 40px;
+}
+
+.date input {
+  max-width: 120px;
+}
+
+.date.calendar-visible .mini-clndr {
+  display: block;
 }
 
 .mini-clndr {
