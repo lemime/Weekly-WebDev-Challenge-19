@@ -4,6 +4,7 @@
 @import "helpers/mixins";
 @import "components/buttons";
 @import "components/nav";
+@import "components/search";
 body {
     margin: 0;
 }
@@ -14,32 +15,6 @@ header {
     background-image: url("../img/view.jpg");
     background-size: cover;
     background-position: center;
-}
-
-.search-panel {
-    position: absolute;
-    bottom: -90px;
-    width: 70%;
-    height: 180px;
-    display: grid;
-    align-items: center;
-    grid-template-columns: 3fr 3fr 2fr 2fr 2fr;
-    grid-column-gap: 30px;
-    box-sizing: border-box;
-    padding: 20px;
-    background-color: $dark-purple;
-    input {
-        height: 30px;
-        background-color: transparent;
-        border: none;
-        border-bottom: solid 1px white;
-        width: 100%;
-    }
-    @media screen and (max-width: $break-small) {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, 30px);
-        height: auto;
-    }
 }
 
 header,

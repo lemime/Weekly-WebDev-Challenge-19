@@ -37,8 +37,6 @@ class Carousel {
     }
     next() {
 
-
-
         if (this.currentElement.previousElementSibling) {
             this.currentElement.previousElementSibling.classList.add('primary');
             this.currentElement.previousElementSibling.classList.remove('small');
@@ -70,7 +68,37 @@ class Carousel {
 
     }
 }
+class Calendar {
+    constructor(elementClass) {
+        let name = '.mini-clndr' + elementClass;
+        let parentName = '.date' + elementClass;
+        $(name).clndr({
+            clickEvents: {
+                click: function (target) {
+                    if (document.querySelector(".selected")) {
+                        document.querySelector(".selected").classList.remove("selected");
+                    }
+                    target.element.firstElementChild.classList.add("selected");
+                    document.querySelector(elementClass).firstElementChild.lastElementChild.value = target.date._i;
+                },
 
+            },
+        });
+
+        $(elementClass).on('click', function () {
+            document.querySelector(parentName).classList.add('calendar-visible');
+        });
+
+        $(document).on('click', function (event) {
+            if (!$(event.target).parents().is(elementClass)) {
+                document.querySelector(parentName).classList.remove('calendar-visible');
+            }
+        });
+        $(name).on('click', function (event) {
+            event.stopPropagation();
+        });
+    }
+}
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -85,5 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
         carousel.animate();
         carousel.previous();
     })
+    calendar = new Calendar('.from');
+    calendar = new Calendar('.to');
 
 });

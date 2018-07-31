@@ -7,13 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|Playfair+Display|Roboto|Passion+One" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-  <script src="js/script.js"></script>
 </head>
 
 <body>
+
   <input class="nav-input" id="more" type="checkbox">
   <nav>
-
     <ul>
       <div class="logo-container">
         <img src="img/logo.png">
@@ -35,12 +34,43 @@
     <div class="container">
       <h1>Fly with us</h1>
     </div>
+
     <div class="search-panel">
-      <input class="city" placeholder="Current City">
-      <input class="destination" placeholder="Destination">
-      <input type="date">
-      <input type="date">
-      <input type="number">
+      <div class="inputs">
+        <input class="city" placeholder="Current City">
+        <input class="destination" placeholder="Destination">
+        <label class="date from">
+          <div class="input-box from">
+            <div class="icon">
+              <img src="img/icons/calendar.png">
+            </div>
+            <input disabled>
+          </div>
+          <div class="mini-clndr from">
+          </div>
+        </label>
+        <label class="date to">
+          <div class="input-box to">
+            <div class="icon">
+              <img src="img/icons/calendar.png">
+            </div>
+            <input disabled>
+          </div>
+          <div class="mini-clndr to">
+          </div>
+        </label>
+        <div class="input-box">
+          <div class="icon">
+            <img src="img/icons/people.png">
+          </div>
+          <div class="people-input">
+            <div class="arrow-up"> &#9650;</div>
+            <input value="2" disabled>
+            <div class="arrow-down">&#9660;</div>
+          </div>
+        </div>
+      </div>
+      <button> > </button>
     </div>
   </header>
   <section id="about-us">
@@ -269,6 +299,11 @@
       <img src="img/Haris Imran.png">
     </div>
   </div>
+  <script src="js/script.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/moment.js"></script>
+  <script src="js/underscore-min.js"></script>
+  <script src="js/clndr.min.js"></script>
 </body>
 
 </html>
