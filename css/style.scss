@@ -10,8 +10,8 @@ body {
 }
 
 header {
-    height: 500px;
     position: relative;
+    height: 500px;
     background-image: url("../img/view.jpg");
     background-size: cover;
     background-position: center;
@@ -79,8 +79,8 @@ h3 {
 }
 
 .bar {
-    z-index: -1;
     position: relative;
+    z-index: -1;
     width: 100%;
     height: 150px;
     display: flex;
@@ -109,8 +109,8 @@ h3 {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: -10px 0 10px 0;
     width: $max-width;
+    margin: -10px 0 10px 0;
 }
 
 .heart {
@@ -151,4 +151,20 @@ svg.icon {
     color: $purple;
     stroke: currentColor;
     vector-effect: non-scaling-stroke;
+}
+
+@keyframes upword {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-up {
+    animation: upword 2s;
+    visibility: visible;
 }

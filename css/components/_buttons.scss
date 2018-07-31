@@ -11,6 +11,7 @@
         size: 12px;
     }
     text-transform: uppercase;
+    transition: box-shadow 1s;
 }
 
 .search {
@@ -27,7 +28,11 @@
 
 .primary-button:hover {
     border: solid 2px $purple;
-    box-shadow: 0px 0px 10px 0px rgba(41.18, 8.24, 47.84, 0.2);
+    box-shadow: 0px 0px 10px 0px rgba(41.18, 8.24, 47.84, 0.5);
+}
+
+.button-animate {
+    box-shadow: 0px 0px 10px 0px rgba(41.18, 8.24, 47.84, 0.5);
 }
 
 button {

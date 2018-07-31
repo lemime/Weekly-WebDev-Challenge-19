@@ -116,6 +116,31 @@ function setDate(date, selector) {
 
 }
 
+function calculateTop(element) {
+
+    _top = 0;
+    do {
+        _top = _top + element.offsetTop;
+        element = element.offsetParent;
+    }
+    while (element != document.body)
+
+    return _top;
+}
+
+function animateElements(elements, buttons) {
+    for (let element of elements) {
+        if (window.pageYOffset + window.innerHeight > calculateTop(element)) {
+            element.classList.add('animate-up');
+        }
+    }
+    for (let button of buttons) {
+        if (window.pageYOffset + window.innerHeight > calculateTop(button)) {
+            button.classList.add('button-animate');
+        }
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
 
     let carousel = new Carousel();
@@ -145,4 +170,12 @@ document.addEventListener("DOMContentLoaded", function () {
     let today = new Date();
     setDate(today, '.from');
     setDate(new Date(today.getFullYear(), today.getMonth(), today.getDate() + 7), '.to');
+
+    elementsToAnimate = document.querySelectorAll('h1, h2, h3, .description');
+    buttonsToAniamte = document.querySelectorAll('.primary-button');
+    console.log(buttonsToAniamte);
+    animateElements(elementsToAnimate, buttonsToAniamte);
+    window.onscroll = function () {
+        animateElements(elementsToAnimate, buttonsToAniamte);
+    };
 });
