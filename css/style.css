@@ -525,6 +525,8 @@ button:focus {
   border-bottom: 30px solid transparent;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
   cursor: pointer;
 }
 
@@ -1095,7 +1097,7 @@ h3 {
 svg.icon {
   width: 80px;
   overflow: visible;
-  stroke-width: 5px;
+  stroke-width: 2px;
   color: #69157a;
   stroke: currentColor;
   vector-effect: non-scaling-stroke;

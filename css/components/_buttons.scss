@@ -67,6 +67,7 @@ button:focus {
     border-left: 35px solid black;
     border-bottom: 30px solid transparent;
     transition: opacity 0.3s;
+    transform: translateX(0);
     cursor: pointer;
 }
 
